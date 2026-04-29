@@ -2,6 +2,7 @@ package osproject;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Scanner;
 
 public class Main {
     
@@ -40,12 +41,46 @@ public class Main {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
+        
+        
         // Print Ready Queue
         System.out.println("\nReady Queue:");
         for (Process p : readyQueue) {
-            p.displayInfo();
+        p.displayInfo();
         }
+
+        // ===== Menu =====
+        Scanner input = new Scanner(System.in);
+
+        while (true) {
+
+         System.out.println("\nChoose Scheduling Algorithm:");
+          System.out.println("1. SJF");
+         System.out.println("2. Round Robin");
+         System.out.println("3. Exit");
+
+         int choice = input.nextInt();
+
+         if (choice == 1) {
+
+        SJFScheduler sjf = new SJFScheduler();
+        sjf.schedule(readyQueue);
+
+         } else if (choice == 2) {
+
+        RRScheduler rr = new RRScheduler();
+        rr.schedule(readyQueue);
+
+         } else if (choice == 3) {
+
+        System.out.println("Program ended.");
+        break; 
+
+         } else {
+
+        System.out.println("Invalid choice");
+    }
+}
 
         // Print Job Queue (should be empty after moving)
         System.out.println("\nAll processes in Job Queue:");
