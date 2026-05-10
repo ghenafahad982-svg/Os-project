@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Queue;
 
@@ -10,7 +9,7 @@ public class PriorityScheduler {
         // Copy processes from the ready queue to:
         // 1. a list of remaining processes (all from the queue)
         List<Process> remaining = new ArrayList<>(readyQueue);
-        //2. a list of comleting processes (empty)
+        // 2. a list of comleting processes (empty)
         List<Process> completed = new ArrayList<>();
         
         int currentTime = 0;

@@ -53,35 +53,37 @@ public class Main {
 
         while (true) {
 
-        System.out.println("\nChoose Scheduling Algorithm:");
-        System.out.println("1. SJF");
-        System.out.println("2. Round Robin");
-        System.out.println("3. Priority scheduling (Non-Preemptive)");
-        System.out.println("4. Exit");
+            System.out.println("\nChoose Scheduling Algorithm:");
+            System.out.println("1. SJF");
+            System.out.println("2. Round Robin");
+            System.out.println("3. Priority scheduling (Non-Preemptive)");
+            System.out.println("4. Exit");
 
-        int choice = input.nextInt();
+            int choice = input.nextInt();
 
-        if (choice == 1) {
-            SJFScheduler sjf = new SJFScheduler();
-            sjf.schedule(readyQueue);
-        } else if (choice == 2) {
-            RRScheduler rr = new RRScheduler();
-            rr.schedule(readyQueue);
-        } else if (choice == 3) {
-            PriorityScheduler ps = new PriorityScheduler();
-            ps.schedule(readyQueue);
-        } else if (choice == 4) {
-            System.out.println("Program ended.");
-            break; 
-        } else {
-            System.out.println("Invalid choice");
+            if (choice == 1) {
+                SJFScheduler sjf = new SJFScheduler();
+                sjf.schedule(readyQueue);
+            } else if (choice == 2) {
+                RRScheduler rr = new RRScheduler();
+                rr.schedule(readyQueue);
+            } else if (choice == 3) {
+                PriorityScheduler ps = new PriorityScheduler();
+                ps.schedule(readyQueue);
+            } else if (choice == 4) {
+                System.out.println("Program ended.");
+                break; 
+            } else {
+                System.out.println("Invalid choice");
+            }
         }
-    }
 
+        /*
         // Print Job Queue (should be empty after moving)
         System.out.println("\nAll processes in Job Queue:");
         for (Process p : jobQueue) {
             p.displayInfo();
         }
+        */
     }
 }
